@@ -1,0 +1,99 @@
+/* src/app/pages/usuarios/usuarios.css */
+
+/* Aplicamos estilos globales al componente */
+:host {
+  display: block;
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  padding: 20px;
+  background-color: #f4f7f6; /* Color de fondo muy suave para toda la página */
+  min-height: 80vh; /* Para asegurar que el fondo cubra bastante espacio */
+}
+
+/* Estilo para el contenedor principal del formulario */
+.registro-container {
+  max-width: 500px;
+  margin: 50px auto; /* Centrado horizontal y margen arriba/abajo */
+  padding: 30px;
+  background-color: #ffffff; /* Fondo blanco para el formulario */
+  border-radius: 12px; /* Esquinas redondeadas suaves */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Sombra suave para dar profundidad */
+  border: 1px solid #eaeaea; /* Borde muy sutil */
+}
+
+/* Estilo para el título */
+h2 {
+  text-align: center;
+  color: #2c3e50; /* Un azul-gris oscuro profesional */
+  margin-bottom: 30px;
+  font-weight: 600;
+  border-bottom: 2px solid #3498db; /* Línea de color azul debajo del título */
+  padding-bottom: 10px;
+  display: inline-block;
+  width: 100%;
+}
+
+/* Espaciado entre los campos */
+.campo {
+  margin-bottom: 20px;
+}
+
+/* Estilo de las etiquetas (Labels) */
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #34495e;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+/* Estilo de los campos de entrada (Inputs) */
+input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #ddd; /* Borde gris claro por defecto */
+  border-radius: 8px;
+  box-sizing: border-box; /* Importante para que el padding no afecte el ancho total */
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s; /* Animación suave al hacer foco */
+}
+
+/* Efecto cuando el usuario hace clic o se posiciona en un input (Focus) */
+input:focus {
+  border-color: #3498db; /* Cambia el borde a azul */
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.3); /* Agrega un resplandor azul sutil */
+  outline: none; /* Quita el borde por defecto del navegador */
+}
+
+/* Estilo para el botón de Registrar */
+button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background-color: #27ae60; /* Verde brillante profesional para acciones positivas */
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s;
+  margin-top: 15px;
+}
+
+/* Efecto al pasar el mouse sobre el botón (cuando está activo) */
+button:hover:not(:disabled) {
+  background-color: #219150; /* Un verde un poco más oscuro */
+}
+
+/* Efecto al hacer clic en el botón (cuando está activo) */
+button:active:not(:disabled) {
+  transform: scale(0.98); /* Se encoge un poquito dando sensación de pulsado */
+}
+
+/* MUY IMPORTANTE: Estilo para el botón DESHABILITADO */
+/* Esto visualiza el resultado de tus validaciones del TS */
+button:disabled {
+  background-color: #bdc3c7; /* Gris claro indicando que no se puede usar */
+  color: #7f8c8d;
+  cursor: not-allowed; /* Cambia el puntero del mouse a un ícono de prohibido */
+  opacity: 0.8;
+}
