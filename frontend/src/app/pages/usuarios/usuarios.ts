@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-// 1. Importamos tu nuevo servicio
 import { UsuarioService } from '../../services/usuario';
 
 @Component({
@@ -11,34 +10,52 @@ import { UsuarioService } from '../../services/usuario';
   styleUrls: ['./usuarios.css']
 })
 export class Usuarios {
+
   registroForm: FormGroup;
 
-  // 2. Inyectamos el servicio en el constructor junto con el FormBuilder
-  constructor(private fb: FormBuilder, private usuarioService: UsuarioService) {
+  // Constructor del componente
+  constructor(
+    private fb: FormBuilder,
+    private usuarioService: UsuarioService
+  ) {
+
+    // Creación del formulario y validaciones
     this.registroForm = this.fb.group({
       nombre: ['', Validators.required],
       correo: ['', [Validators.required, Validators.email]],
       telefono: ['', Validators.required]
     });
+
   }
 
+  // Función que envía los datos al backend
   enviarDatos() {
-    if (this.registroForm.valid) {
-      console.log('Enviando datos...', this.registroForm.value);
 
-      // 3. Enviamos los datos al backend y "escuchamos" la respuesta
+    if (this.registroForm.valid) {
+
       this.usuarioService.registrarUsuario(this.registroForm.value).subscribe({
+
+        // Si el registro fue exitoso
         next: (respuesta) => {
-          console.log('¡Éxito! PHP respondió:', respuesta);
+
           alert('Usuario registrado correctamente');
-          this.registroForm.reset(); // Limpia las cajas de texto tras el éxito
+
+          // Limpia los campos del formulario
+          this.registroForm.reset();
+
         },
+
+        // Si ocurre un error
         error: (error) => {
-          console.error('Error al conectar con PHP:', error);
-          alert('Hubo un problema al registrar el usuario. Revisa la consola.');
+
+          alert('Hubo un problema al registrar el usuario');
+
         }
+
       });
 
     }
+
   }
+
 }

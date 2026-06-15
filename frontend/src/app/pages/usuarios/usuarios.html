@@ -1,8 +1,8 @@
 <div class="registro-container">
   <h2>Registrar Nuevo Usuario</h2>
-  
+
   <form [formGroup]="registroForm" (ngSubmit)="enviarDatos()">
-    
+
     <div class="campo">
       <label for="nombre">Nombre Completo:</label>
       <input type="text" id="nombre" formControlName="nombre" placeholder="Ej. Juan Pérez">
@@ -18,6 +18,9 @@
       <input type="text" id="telefono" formControlName="telefono" placeholder="Ej. 555-1234">
     </div>
 
-    <button type="submit" [disabled]="registroForm.invalid">Registrar Usuario</button>
+    <button type="submit" [disabled]="registroForm.invalid">
+      Registrar Usuario
+    </button>
+
   </form>
 </div>

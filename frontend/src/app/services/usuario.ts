@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class UsuarioService {
   // ATENCIÓN: Esta URL es temporal. 
   // El Integrante 3 debe decirte cuál es la URL exacta de su archivo PHP.
-  private apiUrl = 'http://localhost/tu_proyecto_php/registrar.php';
+  private apiUrl = 'http://localhost/DWgrupo1/backend/guardar.php';
 
   constructor(private http: HttpClient) { }
 
