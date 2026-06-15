@@ -1,1 +1,62 @@
-<p>reporte works!</p>
+<div class="reporte-container">
+  <h2>Reporte de Usuarios</h2>
+
+  <table *ngIf="usuarios.length > 0; else sinUsuarios">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Correo</th>
+        <th>Telefono</th>
+        <th>Fecha de Registro</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let usuario of usuarios">
+        <td>{{ usuario.id }}</td>
+        <td>
+          <input
+            *ngIf="usuarioEditando?.id === usuario.id; else nombreTexto"
+            type="text"
+            [(ngModel)]="usuarioEditando.nombre"
+          >
+          <ng-template #nombreTexto>{{ usuario.nombre }}</ng-template>
+        </td>
+        <td>
+          <input
+            *ngIf="usuarioEditando?.id === usuario.id; else correoTexto"
+            type="email"
+            [(ngModel)]="usuarioEditando.correo"
+          >
+          <ng-template #correoTexto>{{ usuario.correo }}</ng-template>
+        </td>
+        <td>
+          <input
+            *ngIf="usuarioEditando?.id === usuario.id; else telefonoTexto"
+            type="text"
+            [(ngModel)]="usuarioEditando.telefono"
+          >
+          <ng-template #telefonoTexto>{{ usuario.telefono }}</ng-template>
+        </td>
+        <td>{{ usuario.fecha_registro }}</td>
+        <td class="acciones">
+          <ng-container *ngIf="usuarioEditando?.id === usuario.id; else accionesNormales">
+            <button class="btn-guardar" type="button" (click)="guardarCambios()">Guardar</button>
+            <button class="btn-cancelar" type="button" (click)="cancelarEdicion()">Cancelar</button>
+          </ng-container>
+
+          <ng-template #accionesNormales>
+            <button class="btn-editar" type="button" (click)="editarUsuario(usuario)">Editar</button>
+            <button class="btn-eliminar" type="button" (click)="eliminarUsuario(usuario.id)">Eliminar</button>
+          </ng-template>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #sinUsuarios>
+    <p>No hay usuarios registrados.</p>
+  </ng-template>
+</div>

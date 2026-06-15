@@ -1,11 +1,15 @@
-<nav>
-  <!-- routerLink permite navegar entre paginas sin recargar el sitio -->
-  <a routerLink="/">Inicio</a>
-  <a routerLink="/usuarios">Usuarios</a>
-  <a routerLink="/reporte">Reporte</a>
+<nav class="navbar">
+  <a class="logo" routerLink="/">Registro Usuarios</a>
+
+  <!-- routerLink cambia de pagina dentro de Angular sin recargar el sitio completo. -->
+  <div class="nav-links">
+    <a routerLink="/">Inicio</a>
+    <a routerLink="/usuarios">Usuarios</a>
+    <a routerLink="/reporte">Reporte</a>
+  </div>
 </nav>
 
 <main>
-  <!-- Aqui Angular muestra el componente segun la ruta seleccionada -->
+  <!-- router-outlet muestra el componente que corresponde a la ruta seleccionada. -->
   <router-outlet></router-outlet>
 </main>

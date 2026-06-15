@@ -1,0 +1,90 @@
+:host {
+  display: block;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  padding: 20px;
+  background-color: #f4f7f6;
+  min-height: 80vh;
+}
+
+.reporte-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: #3498db;
+  color: white;
+  padding: 12px;
+}
+
+td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+tr:hover {
+  background-color: #f2f2f2;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.acciones {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+button {
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 8px 12px;
+}
+
+.btn-editar {
+  background-color: #f39c12;
+}
+
+.btn-eliminar {
+  background-color: #e74c3c;
+}
+
+.btn-guardar {
+  background-color: #27ae60;
+}
+
+.btn-cancelar {
+  background-color: #7f8c8d;
+}
+
+p {
+  text-align: center;
+  color: #555;
+}
